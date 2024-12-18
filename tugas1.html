@@ -16,7 +16,23 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    
+    <style>
+      /* Menjadikan body full height dan memastikan footer di bawah */
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+      }
+      main {
+        flex: 1; /* Isi halaman mengisi ruang yang tersisa */
+      }
+      footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #f8f9fa;
+      }
+    </style>
   </head>
   <body>
     <!-- Navbar -->

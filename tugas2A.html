@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tugas 2A</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      /* Menjadikan body full height dan memastikan footer di bawah */
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+      }
+      main {
+        flex: 1; /* Isi halaman mengisi ruang yang tersisa */
+      }
+      footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #f8f9fa;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Kumpulan Tugas</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="tentang.html"
+                >Tentang
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Content -->
+    <main class="container mt-4">
+      <h1>
+        Tugas 2 A Rancangan Sistem Pengajuan Pengisian Uang di ATM Menggunakan
+        Metode Waterfall
+      </h1>
+      <ul>
+        <li>
+          Judul Tugas: Rancangan Sistem Pengajuan Pengisian Uang di ATM
+          Menggunakan Metode Waterfall
+        </li>
+        <li>
+          Deskripsi: Membuat usecase,activity diagram tentang pengajuan
+          pengisian uang di atm
+        </li>
+      </ul>
+      <ol type="A">
+        <li>Analisis Kebutuhan</li>
+        <p><b>Kebutuhan fungsional</b></p>
+        <ul>
+          <li>Sistem harus bisa pengajuan pengisian Uang di ATM</li>
+          <li>
+            Sistem harus memiliki fungsi cek atau verifikasi terhadap pengajuan
+            pengisian.
+          </li>
+          <li>
+            Sistem harus mengelola proses serah terima Box Cash Order dalam
+            Berita Acara Serah Terima Box.
+          </li>
+          <li>
+            Sistem harus dapat menginputkan data hasil replenishment ke
+            database.
+          </li>
+          <li>
+            Sistem harus menghasilkan laporan cash replenishment secara otomatis
+            setelah data diinput ke database.
+          </li>
+        </ul>
+        <br />
+        <p><b>Kebutuhan Fungsional</b></p>
+        <ul>
+          <li>
+            Sistem harus memproses validasi pengajuan dan pembuatan laporan
+            dalam waktu cepat.
+          </li>
+          <li>
+            Sistem harus melindungi seluruh data baik data transaksi maupun data
+            pengajuan pengisian
+          </li>
+          <li>
+            Sistem harus memiliki uptime sebesar 99,9% agar selalu siap
+            digunakan dalam operasional.
+          </li>
+          <li>
+            Laporan harus akurat, real-time, dan tersedia dalam format yang
+            mudah dipahami (PDF, Excel, atau digital dashboard).
+          </li>
+        </ul>
+        <br />
+        <li>Desain Sistem</li>
+        <p><b>Arsitektur Sistem</b></p>
+        <ul>
+          <li>Scheduler : Antarmuka untuk mengajukan permintaan pengisian</li>
+          <li>
+            Administrator : Antarmuka untuk memvalidasi pengajuan pengisian,
+            Input data hasil proses replenishment, Monitoring data transaksi dan
+            pengisian.
+          </li>
+          <li>
+            Pimpinan : Antarmuka untuk melihat laporan Cash Replenishment secara
+            real-time, Visualisasi data (grafik, tabel).
+          </li>
+          <li>
+            Bank : Antarmuka untuk menerima laporan cash replenishment dalam
+            format yang terstruktur (PDF, Excel, dll.).
+          </li>
+          <li>Server : Untuk menyimpan berita acara dan laporan di database</li>
+        </ul>
+        <br />
+        <li><b>Alur Proses</b></li>
+        <ul>
+          <li>
+            Pengajuan Pengisian
+            <p>
+              Scheduler melakukan pengajuan pengisian uang tunai ke
+              Administrator
+            </p>
+          </li>
+          <li>
+            Verifikasi
+            <p>
+              Administrator melakukan verifikasi pengajuan pengisian uang tunai
+            </p>
+          </li>
+          <li>
+            Box Cash Order
+            <p>Administrator mengelola proses administrasi cash order</p>
+          </li>
+          <li>
+            Berita Acara
+            <p>Kasir membuat berita acara serah terima box</p>
+          </li>
+          <li>
+            input Data
+            <p>Administrator melakukan input data ke database</p>
+          </li>
+          <li>
+            Laporan Cash Replenishment
+            <p>Pimpinan dan Bank menerima laporan cash replenishment</p>
+          </li>
+        </ul>
+        <li>Desain Usecase dan Activity Diagram</li>
+        <h3>Use Case</h3>
+        <img src="usecase_atm.jpg" />
+        <br />
+        <br />
+        <h3>Activity Diagram</h3>
+        <img src="activity_diagram.jpg" />
+        <br />
+        <br />
+        <h3>Sequence Diagram</h3>
+        <img src="sequence_pengajuan.png" />
+        <br />
+        <br />
+        <h3>Class Diagram</h3>
+        <img src="classdiagram_pemeliharaan.jpg" />
+        <br />
+        <br />
+        <li>Implementasi</li>
+        <p>
+          Proses ini merupakan proses perancangan sistem berdasarkan desain yang
+          telah dibuat sebelumnya meliputi :
+        </p>
+        <ul>
+          <li>Scheduler : Antarmuka untuk mengajukan permintaan pengisian</li>
+          <li>
+            Administrator : Antarmuka untuk memvalidasi pengajuan pengisian,
+            Input data hasil proses replenishment, Monitoring data transaksi dan
+            pengisian.
+          </li>
+          <li>
+            Pimpinan : Antarmuka untuk melihat laporan Cash Replenishment secara
+            real-time, Visualisasi data (grafik, tabel).
+          </li>
+          <li>
+            Bank : Antarmuka untuk menerima laporan cash replenishment dalam
+            format yang terstruktur (PDF, Excel, dll.).
+          </li>
+          <li>Server : Untuk menyimpan berita acara dan laporan di database</li>
+        </ul>
+        <br />
+        <p>
+          Teknologi bahasa pemrograman yang digunakan yaitu : <br />
+          Frontend
+        </p>
+        <ul>
+          <li>Framework: React.js (untuk Web) atau Flutter (untuk Mobile)</li>
+          <li>Styling: Bootstrap CSS</li>
+        </ul>
+        <p>Backend</p>
+        <ul>
+          <li>Bahasa Pemrograman: Node.js dengan Express.js atau Python</li>
+          <li>RESTful API untuk komunikasi antara front-end dan back-end</li>
+        </ul>
+        <p>
+          Database <br />
+          Database yang digunakan yaitu mysql <br />
+          <br />
+          Keamanan <br />
+          Autentikasi: JWT (JSON Web Token)
+        </p>
+        <li>Pengujian Sistem</li>
+        <p>
+          Pengujian dilakukan untuk memastikan semua fitur dan alur sudah
+          sesuai, Pengujian ini menggunakan blackbox testing untuk menguji fitur
+          yang telah dibuat. Jika ditemukan bug maka sistem dilakukan perbaikan.
+        </p>
+        <li>Deployment</li>
+        <p style="text-align: justify">
+          Tahap deployment Sistem Cash Replenishment Mesin ATM menggunakan
+          arsitektur Client-Server, di mana front-end dibangun dengan React.js,
+          sementara back-end menggunakan Node.js yang terhubung ke database
+          MySQL. Proses ini mencakup instalasi dependensi, konfigurasi database,
+          dan pengaturan lingkungan produksi. Sistem diuji untuk memastikan
+          fungsi berjalan optimal, diikuti monitoring performa menggunakan alat
+          seperti htop serta backup data terjadwal untuk menjaga integritas.
+          Dengan langkah ini, sistem siap digunakan untuk mendukung operasional
+          cash replenishment ATM secara efisien.
+        </p>
+        <li>Maintenance</li>
+        <p style="text-align: justify">
+          Tahap maintenance Sistem Cash Replenishment Mesin ATM memastikan
+          sistem tetap optimal, aman, dan stabil pasca-deployment. Pemantauan
+          rutin dilakukan untuk menjaga performa dan stabilitas. Backup data
+          dijadwalkan secara berkala untuk memastikan keamanan data. Keamanan
+          diperkuat melalui pembaruan sistem, implementasi HTTPS, dan audit
+          berkala. Penanganan bug dilakukan dengan memantau log error, pengujian
+          berkala, serta feedback pengguna. Optimasi mencakup pembersihan data,
+          optimasi database, caching, dan peningkatan kapasitas server jika
+          diperlukan. Semua perubahan didokumentasikan dengan pelatihan kepada
+          tim operasional agar sistem berjalan efektif dan mendukung proses
+          secara berkelanjutan.
+        </p>
+      </ol>
+      <a href="index.html" class="btn btn-secondary mt-5">Kembali ke Beranda</a>
+    </main>
+
+    <footer>
+      <p class="text-black">&copy; Aditya Taufiq Maulana</p>
+    </footer>
+  </body>
+</html>
